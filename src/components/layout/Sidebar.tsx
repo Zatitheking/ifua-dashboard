@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, Kanban, Users, BarChart3, Settings, ChevronLeft, ChevronRight, RotateCcw, Eye, Briefcase, UserCheck } from "lucide-react";
+import { LayoutDashboard, Kanban, Users, BarChart3, Settings, ChevronLeft, ChevronRight, RotateCcw, Eye, Briefcase, UserCheck, Building2 } from "lucide-react";
 import { useAppStore } from "../../store/appStore";
 
 const navItems = [
   { to: "/", icon: LayoutDashboard, label: "Dashboard" },
   { to: "/pipeline", icon: Kanban, label: "Pipeline" },
+  { to: "/clients", icon: Building2, label: "Ügyfelek" },
   { to: "/team", icon: Users, label: "Csapat" },
   { to: "/capacity", icon: BarChart3, label: "Kapacitás" },
 ];

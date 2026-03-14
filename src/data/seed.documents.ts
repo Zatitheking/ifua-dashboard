@@ -1,27 +1,27 @@
 import { type ProjectDocument, type OneDriveLink, type PersonEvaluation, DocumentType } from "../types/document";
 
 export const seedDocuments: ProjectDocument[] = [
-  { id: "doc1", projectId: "pr1", name: "OTP Digitális Transzformáció — Ajánlat v2.1", type: DocumentType.PROPOSAL_SLIDE, fileName: "OTP_DT_Ajanlat_v2.1.pptx", fileSize: 4500000, uploadedBy: "Horváth Ádám", uploadedAt: "2025-12-15", notes: "Végleges ajánlati prezentáció" },
-  { id: "doc2", projectId: "pr1", name: "OTP Discovery Fázis Összefoglaló", type: DocumentType.REPORT, fileName: "OTP_Discovery_Summary.pdf", fileSize: 2100000, uploadedBy: "Egervári Balázs", uploadedAt: "2026-02-20" },
-  { id: "doc3", projectId: "pr2", name: "MOL SAP Migration — Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "MOL_SAP_Proposal.pptx", fileSize: 6200000, uploadedBy: "Horváth Ádám", uploadedAt: "2025-09-01", notes: "SAP S/4HANA migráció ajánlat" },
-  { id: "doc4", projectId: "pr2", name: "MOL — Szerződés", type: DocumentType.CONTRACT, fileName: "MOL_Contract_2025.pdf", fileSize: 800000, uploadedBy: "Szegedi Zoltán", uploadedAt: "2025-09-25" },
-  { id: "doc5", projectId: "pr3", name: "Telekom CX Stratégia Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "Telekom_CX_Proposal.pptx", fileSize: 5100000, uploadedBy: "Neumann-Toró Krisztina", uploadedAt: "2026-01-15" },
-  { id: "doc6", projectId: "pr4", name: "Richter Supply Chain — Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "Richter_SC_Proposal.pptx", fileSize: 3800000, uploadedBy: "Gálfi Péter", uploadedAt: "2026-01-28" },
-  { id: "doc7", projectId: "pr6", name: "Audi Lean — Értékáram elemzés", type: DocumentType.REPORT, fileName: "Audi_VSM_Report.pdf", fileSize: 1500000, uploadedBy: "Gálfi Péter", uploadedAt: "2026-03-01" },
-  { id: "doc8", projectId: "pr15", name: "Ericsson SAFe Bevezetés — Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "Ericsson_SAFe_Proposal.pptx", fileSize: 4200000, uploadedBy: "Szentkirályi Márton", uploadedAt: "2025-10-20" },
-  { id: "doc9", projectId: "pr13", name: "Coca-Cola Data Platform — Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "CocaCola_Data_Proposal.pptx", fileSize: 3500000, uploadedBy: "Kádas Antal", uploadedAt: "2025-12-20" },
-  { id: "doc10", projectId: "pr9", name: "Tesco — Záróriport", type: DocumentType.REPORT, fileName: "Tesco_FinalReport.pdf", fileSize: 2800000, uploadedBy: "Bacskai Anna", uploadedAt: "2026-01-10", notes: "Projekt lezáró dokumentáció" },
+  { id: "doc1", projectId: "pr1", name: "OTP Digitális Transzformáció — Ajánlat v2.1", type: DocumentType.PROPOSAL_SLIDE, fileName: "OTP_DT_Ajanlat_v2.1.pptx", fileSize: 4500000, uploadedBy: "Kovács Péter", uploadedAt: "2025-12-15", notes: "Végleges ajánlati prezentáció" },
+  { id: "doc2", projectId: "pr1", name: "OTP Discovery Fázis Összefoglaló", type: DocumentType.REPORT, fileName: "OTP_Discovery_Summary.pdf", fileSize: 2100000, uploadedBy: "Tóth Bence", uploadedAt: "2026-02-20" },
+  { id: "doc3", projectId: "pr2", name: "MOL SAP Migration — Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "MOL_SAP_Proposal.pptx", fileSize: 6200000, uploadedBy: "Kovács Péter", uploadedAt: "2025-09-01", notes: "SAP S/4HANA migráció ajánlat" },
+  { id: "doc4", projectId: "pr2", name: "MOL — Szerződés", type: DocumentType.CONTRACT, fileName: "MOL_Contract_2025.pdf", fileSize: 800000, uploadedBy: "Nagy Tamás", uploadedAt: "2025-09-25" },
+  { id: "doc5", projectId: "pr3", name: "Telekom CX Stratégia Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "Telekom_CX_Proposal.pptx", fileSize: 5100000, uploadedBy: "Németh Kata", uploadedAt: "2026-01-15" },
+  { id: "doc6", projectId: "pr4", name: "Richter Supply Chain — Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "Richter_SC_Proposal.pptx", fileSize: 3800000, uploadedBy: "Molnár Gergő", uploadedAt: "2026-01-28" },
+  { id: "doc7", projectId: "pr6", name: "Audi Lean — Értékáram elemzés", type: DocumentType.REPORT, fileName: "Audi_VSM_Report.pdf", fileSize: 1500000, uploadedBy: "Molnár Gergő", uploadedAt: "2026-03-01" },
+  { id: "doc8", projectId: "pr15", name: "Ericsson SAFe Bevezetés — Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "Ericsson_SAFe_Proposal.pptx", fileSize: 4200000, uploadedBy: "Simon Levente", uploadedAt: "2025-10-20" },
+  { id: "doc9", projectId: "pr13", name: "Coca-Cola Data Platform — Ajánlat", type: DocumentType.PROPOSAL_SLIDE, fileName: "CocaCola_Data_Proposal.pptx", fileSize: 3500000, uploadedBy: "Kiss András", uploadedAt: "2025-12-20" },
+  { id: "doc10", projectId: "pr9", name: "Tesco — Záróriport", type: DocumentType.REPORT, fileName: "Tesco_FinalReport.pdf", fileSize: 2800000, uploadedBy: "Szabó Eszter", uploadedAt: "2026-01-10", notes: "Projekt lezáró dokumentáció" },
 ];
 
 export const seedOneDriveLinks: OneDriveLink[] = [
-  { id: "od1", projectId: "pr1", label: "OTP Projekt Mappa", url: "https://ifuahorvath.sharepoint.com/sites/OTP-DT/Shared%20Documents", addedBy: "Egervári Balázs", addedAt: "2026-01-15" },
-  { id: "od2", projectId: "pr1", label: "OTP Workshop Anyagok", url: "https://ifuahorvath.sharepoint.com/sites/OTP-DT/Workshop", addedBy: "Szabó Péter Gábor", addedAt: "2026-02-01" },
-  { id: "od3", projectId: "pr2", label: "MOL SAP Projekt Dokumentáció", url: "https://ifuahorvath.sharepoint.com/sites/MOL-SAP/Documents", addedBy: "Horváth Ádám", addedAt: "2025-10-01" },
-  { id: "od4", projectId: "pr2", label: "MOL Technikai Specifikáció", url: "https://ifuahorvath.sharepoint.com/sites/MOL-SAP/TechSpec", addedBy: "Török László", addedAt: "2025-11-15" },
-  { id: "od5", projectId: "pr6", label: "Audi Lean Projekt Tér", url: "https://ifuahorvath.sharepoint.com/sites/Audi-Lean", addedBy: "Pregi Miklós", addedAt: "2025-11-10" },
-  { id: "od6", projectId: "pr15", label: "Ericsson Agile — Közös Mappa", url: "https://ifuahorvath.sharepoint.com/sites/Ericsson-Agile", addedBy: "Szentkirályi Márton", addedAt: "2025-12-05" },
-  { id: "od7", projectId: "pr13", label: "Coca-Cola Analytics Workspace", url: "https://ifuahorvath.sharepoint.com/sites/CocaCola-Data", addedBy: "Kádas Antal", addedAt: "2026-01-05" },
-  { id: "od8", projectId: "pr3", label: "Telekom CX — Ajánlati anyagok", url: "https://ifuahorvath.sharepoint.com/sites/Telekom-CX", addedBy: "Neumann-Toró Krisztina", addedAt: "2026-01-12" },
+  { id: "od1", projectId: "pr1", label: "OTP Projekt Mappa", url: "https://demo.sharepoint.com/sites/OTP-DT/Shared%20Documents", addedBy: "Tóth Bence", addedAt: "2026-01-15" },
+  { id: "od2", projectId: "pr1", label: "OTP Workshop Anyagok", url: "https://demo.sharepoint.com/sites/OTP-DT/Workshop", addedBy: "Balogh Dávid", addedAt: "2026-02-01" },
+  { id: "od3", projectId: "pr2", label: "MOL SAP Projekt Dokumentáció", url: "https://demo.sharepoint.com/sites/MOL-SAP/Documents", addedBy: "Kovács Péter", addedAt: "2025-10-01" },
+  { id: "od4", projectId: "pr2", label: "MOL Technikai Specifikáció", url: "https://demo.sharepoint.com/sites/MOL-SAP/TechSpec", addedBy: "Major István", addedAt: "2025-11-15" },
+  { id: "od5", projectId: "pr6", label: "Audi Lean Projekt Tér", url: "https://demo.sharepoint.com/sites/Audi-Lean", addedBy: "Farkas László", addedAt: "2025-11-10" },
+  { id: "od6", projectId: "pr15", label: "Ericsson Agile — Közös Mappa", url: "https://demo.sharepoint.com/sites/Ericsson-Agile", addedBy: "Simon Levente", addedAt: "2025-12-05" },
+  { id: "od7", projectId: "pr13", label: "Coca-Cola Analytics Workspace", url: "https://demo.sharepoint.com/sites/CocaCola-Data", addedBy: "Kiss András", addedAt: "2026-01-05" },
+  { id: "od8", projectId: "pr3", label: "Telekom CX — Ajánlati anyagok", url: "https://demo.sharepoint.com/sites/Telekom-CX", addedBy: "Németh Kata", addedAt: "2026-01-12" },
 ];
 
 export const seedEvaluations: PersonEvaluation[] = [

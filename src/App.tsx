@@ -8,6 +8,7 @@ import { SettingsPage } from "./pages/SettingsPage";
 import { SponsorView } from "./pages/SponsorView";
 import { ProjectManagerView } from "./pages/ProjectManagerView";
 import { TeamMemberView } from "./pages/TeamMemberView";
+import { ClientsPage } from "./pages/ClientsPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route element={<AppShell />}>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/pipeline" element={<PipelinePage />} />
+          <Route path="/clients" element={<ClientsPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/capacity" element={<CapacityPage />} />
           <Route path="/views/sponsor" element={<SponsorView />} />

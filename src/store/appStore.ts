@@ -4,10 +4,12 @@ import type { Project } from "../types/project";
 import type { Person } from "../types/person";
 import type { ProjectAssignment } from "../types/assignment";
 import type { ProjectDocument, OneDriveLink, PersonEvaluation } from "../types/document";
+import type { Client } from "../types/client";
 import { seedProjects } from "../data/seed.projects";
 import { seedPersons } from "../data/seed.persons";
 import { seedAssignments } from "../data/seed.assignments";
 import { seedDocuments, seedOneDriveLinks, seedEvaluations } from "../data/seed.documents";
+import { seedClients } from "../data/seed.clients";
 
 interface AppState {
   projects: Project[];
@@ -16,6 +18,7 @@ interface AppState {
   documents: ProjectDocument[];
   oneDriveLinks: OneDriveLink[];
   evaluations: PersonEvaluation[];
+  clients: Client[];
 
   selectedProjectId: string | null;
   selectedPersonId: string | null;
@@ -41,6 +44,10 @@ interface AppState {
   addEvaluation: (evaluation: PersonEvaluation) => void;
   deleteEvaluation: (id: string) => void;
 
+  addClient: (client: Client) => void;
+  updateClient: (id: string, data: Partial<Client>) => void;
+  deleteClient: (id: string) => void;
+
   setSelectedProjectId: (id: string | null) => void;
   setSelectedPersonId: (id: string | null) => void;
   toggleSidebar: () => void;
@@ -57,6 +64,7 @@ export const useAppStore = create<AppState>()(
       documents: seedDocuments,
       oneDriveLinks: seedOneDriveLinks,
       evaluations: seedEvaluations,
+      clients: seedClients,
 
       selectedProjectId: null,
       selectedPersonId: null,
@@ -95,6 +103,13 @@ export const useAppStore = create<AppState>()(
       addEvaluation: (evaluation) => set((s) => ({ evaluations: [...s.evaluations, evaluation] })),
       deleteEvaluation: (id) => set((s) => ({ evaluations: s.evaluations.filter((e) => e.id !== id) })),
 
+      addClient: (client) => set((s) => ({ clients: [...s.clients, client] })),
+      updateClient: (id, data) =>
+        set((s) => ({
+          clients: s.clients.map((c) => (c.id === id ? { ...c, ...data, updatedAt: new Date().toISOString() } : c)),
+        })),
+      deleteClient: (id) => set((s) => ({ clients: s.clients.filter((c) => c.id !== id) })),
+
       setSelectedProjectId: (id) => set({ selectedProjectId: id }),
       setSelectedPersonId: (id) => set({ selectedPersonId: id }),
       toggleSidebar: () => set((s) => ({ sidebarCollapsed: !s.sidebarCollapsed })),
@@ -107,13 +122,14 @@ export const useAppStore = create<AppState>()(
           documents: seedDocuments,
           oneDriveLinks: seedOneDriveLinks,
           evaluations: seedEvaluations,
+          clients: seedClients,
           selectedProjectId: null,
           selectedPersonId: null,
         }),
     }),
     {
       name: "ifua-pipeline-store",
-      version: 3,
+      version: 4,
     }
   )
 );
