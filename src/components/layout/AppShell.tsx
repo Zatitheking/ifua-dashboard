@@ -5,11 +5,11 @@ import { MobileNav } from "./MobileNav";
 export function AppShell() {
   return (
     <div className="flex min-h-screen bg-[#F4F5F7]">
-      {/* Desktop sidebar */}
-      <div className="hidden lg:block">
+      {/* Desktop sidebar — sticky so it stays visible while content scrolls */}
+      <div className="hidden lg:block sticky top-0 h-screen">
         <Sidebar />
       </div>
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden pb-16 lg:pb-0">
+      <main className="flex-1 flex flex-col min-w-0 pb-16 lg:pb-0">
         <Outlet />
       </main>
       {/* Mobile bottom nav */}

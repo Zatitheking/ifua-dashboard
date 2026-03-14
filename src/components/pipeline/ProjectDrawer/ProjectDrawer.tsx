@@ -3,6 +3,7 @@ import { Drawer } from "../../ui/Drawer";
 import { useAppStore } from "../../../store/appStore";
 import { ProjectBasicForm } from "./ProjectBasicForm";
 import { ProjectTeamTab } from "./ProjectTeamTab";
+import { ProjectDocsTab } from "./ProjectDocsTab";
 
 interface ProjectDrawerProps {
   projectId: string | null;
@@ -12,7 +13,7 @@ interface ProjectDrawerProps {
 
 export function ProjectDrawer({ projectId, open, onClose }: ProjectDrawerProps) {
   const { projects } = useAppStore();
-  const [tab, setTab] = useState<"basic" | "team">("basic");
+  const [tab, setTab] = useState<"basic" | "team" | "docs">("basic");
 
   const project = projects.find((p) => p.id === projectId);
   if (!project && open) return null;
@@ -24,11 +25,12 @@ export function ProjectDrawer({ projectId, open, onClose }: ProjectDrawerProps) 
           {[
             { key: "basic" as const, label: "Alapadatok" },
             { key: "team" as const, label: "Csapat" },
+            { key: "docs" as const, label: "Dokumentumok" },
           ].map((t) => (
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
-              className={`px-4 sm:px-6 py-3 text-sm font-medium border-b-2 transition-colors cursor-pointer ${
+              className={`px-3 sm:px-6 py-3 text-sm font-medium border-b-2 transition-colors cursor-pointer ${
                 tab === t.key
                   ? "border-[#C8A951] text-[#C8A951]"
                   : "border-transparent text-gray-500 hover:text-gray-700"
@@ -41,7 +43,9 @@ export function ProjectDrawer({ projectId, open, onClose }: ProjectDrawerProps) 
       </div>
       {project && (
         <div className="p-4 sm:p-6">
-          {tab === "basic" ? <ProjectBasicForm project={project} /> : <ProjectTeamTab project={project} />}
+          {tab === "basic" && <ProjectBasicForm project={project} />}
+          {tab === "team" && <ProjectTeamTab project={project} />}
+          {tab === "docs" && <ProjectDocsTab project={project} />}
         </div>
       )}
     </Drawer>

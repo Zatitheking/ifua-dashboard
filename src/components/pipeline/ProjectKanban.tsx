@@ -51,11 +51,11 @@ export function ProjectKanban({ onProjectClick, searchQuery }: ProjectKanbanProp
   };
 
   return (
-    <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0" style={{ minHeight: "calc(100vh - 280px)" }}>
+    <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 items-start">
       {columns.map((col) => (
         <div
           key={col.status}
-          className="flex-shrink-0 w-64 sm:w-72 flex flex-col"
+          className="flex-shrink-0 w-64 sm:w-72"
           onDragOver={(e) => e.preventDefault()}
           onDrop={(e) => handleDrop(e, col.status)}
         >
@@ -71,7 +71,7 @@ export function ProjectKanban({ onProjectClick, searchQuery }: ProjectKanbanProp
             </div>
             <span className="text-xs text-gray-400 font-medium">{formatCurrency(col.total)}</span>
           </div>
-          <div className="flex-1 space-y-3 min-h-[100px] p-1 rounded-lg bg-gray-50/50">
+          <div className="space-y-3 min-h-[60px] p-1 rounded-lg bg-gray-50/50">
             {col.projects.map((project) => (
               <div
                 key={project.id}

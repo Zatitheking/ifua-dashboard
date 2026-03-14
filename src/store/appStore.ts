@@ -3,21 +3,24 @@ import { persist } from "zustand/middleware";
 import type { Project } from "../types/project";
 import type { Person } from "../types/person";
 import type { ProjectAssignment } from "../types/assignment";
+import type { ProjectDocument, OneDriveLink, PersonEvaluation } from "../types/document";
 import { seedProjects } from "../data/seed.projects";
 import { seedPersons } from "../data/seed.persons";
 import { seedAssignments } from "../data/seed.assignments";
+import { seedDocuments, seedOneDriveLinks, seedEvaluations } from "../data/seed.documents";
 
 interface AppState {
   projects: Project[];
   persons: Person[];
   assignments: ProjectAssignment[];
+  documents: ProjectDocument[];
+  oneDriveLinks: OneDriveLink[];
+  evaluations: PersonEvaluation[];
 
-  // UI state
   selectedProjectId: string | null;
   selectedPersonId: string | null;
   sidebarCollapsed: boolean;
 
-  // Actions
   setProjects: (projects: Project[]) => void;
   addProject: (project: Project) => void;
   updateProject: (id: string, data: Partial<Project>) => void;
@@ -30,6 +33,13 @@ interface AppState {
   addAssignment: (assignment: ProjectAssignment) => void;
   updateAssignment: (id: string, data: Partial<ProjectAssignment>) => void;
   deleteAssignment: (id: string) => void;
+
+  addDocument: (doc: ProjectDocument) => void;
+  deleteDocument: (id: string) => void;
+  addOneDriveLink: (link: OneDriveLink) => void;
+  deleteOneDriveLink: (id: string) => void;
+  addEvaluation: (evaluation: PersonEvaluation) => void;
+  deleteEvaluation: (id: string) => void;
 
   setSelectedProjectId: (id: string | null) => void;
   setSelectedPersonId: (id: string | null) => void;
@@ -44,6 +54,9 @@ export const useAppStore = create<AppState>()(
       projects: seedProjects,
       persons: seedPersons,
       assignments: seedAssignments,
+      documents: seedDocuments,
+      oneDriveLinks: seedOneDriveLinks,
+      evaluations: seedEvaluations,
 
       selectedProjectId: null,
       selectedPersonId: null,
@@ -75,6 +88,13 @@ export const useAppStore = create<AppState>()(
         })),
       deleteAssignment: (id) => set((s) => ({ assignments: s.assignments.filter((a) => a.id !== id) })),
 
+      addDocument: (doc) => set((s) => ({ documents: [...s.documents, doc] })),
+      deleteDocument: (id) => set((s) => ({ documents: s.documents.filter((d) => d.id !== id) })),
+      addOneDriveLink: (link) => set((s) => ({ oneDriveLinks: [...s.oneDriveLinks, link] })),
+      deleteOneDriveLink: (id) => set((s) => ({ oneDriveLinks: s.oneDriveLinks.filter((l) => l.id !== id) })),
+      addEvaluation: (evaluation) => set((s) => ({ evaluations: [...s.evaluations, evaluation] })),
+      deleteEvaluation: (id) => set((s) => ({ evaluations: s.evaluations.filter((e) => e.id !== id) })),
+
       setSelectedProjectId: (id) => set({ selectedProjectId: id }),
       setSelectedPersonId: (id) => set({ selectedPersonId: id }),
       toggleSidebar: () => set((s) => ({ sidebarCollapsed: !s.sidebarCollapsed })),
@@ -84,13 +104,16 @@ export const useAppStore = create<AppState>()(
           projects: seedProjects,
           persons: seedPersons,
           assignments: seedAssignments,
+          documents: seedDocuments,
+          oneDriveLinks: seedOneDriveLinks,
+          evaluations: seedEvaluations,
           selectedProjectId: null,
           selectedPersonId: null,
         }),
     }),
     {
       name: "ifua-pipeline-store",
-      version: 2,
+      version: 3,
     }
   )
 );
