@@ -4,6 +4,8 @@ import { PipelineFunnel } from "../components/dashboard/PipelineFunnel";
 import { RevenueForecast } from "../components/dashboard/RevenueForecast";
 import { TeamUtilizationBar } from "../components/dashboard/TeamUtilizationBar";
 import { CCUtilizationDonut } from "../components/dashboard/CCUtilizationDonut";
+import { IndustryDistribution } from "../components/dashboard/IndustryDistribution";
+import { FunctionalCCDistribution } from "../components/dashboard/FunctionalCCDistribution";
 
 export function DashboardPage() {
   return (
@@ -14,6 +16,10 @@ export function DashboardPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           <PipelineFunnel />
           <RevenueForecast />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+          <IndustryDistribution />
+          <FunctionalCCDistribution />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           <TeamUtilizationBar />
