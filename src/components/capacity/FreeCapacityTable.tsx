@@ -21,25 +21,49 @@ export function FreeCapacityTable({ onPersonClick }: FreeCapacityTableProps) {
   const over = capacity.filter((c) => c.isOverallocated);
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-5">
+    <div className="bg-white rounded-xl border border-gray-200 p-3 sm:p-5">
       <h3 className="text-sm font-semibold text-gray-900 mb-4">Szabad kapacitás</h3>
 
-      <div className="grid grid-cols-3 gap-3 mb-5">
-        <div className="p-3 bg-green-50 rounded-lg text-center border border-green-100">
-          <div className="text-2xl font-bold text-green-700">{free.length}</div>
-          <div className="text-xs text-green-600">Elérhető (&lt;80%)</div>
+      <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5">
+        <div className="p-2 sm:p-3 bg-green-50 rounded-lg text-center border border-green-100">
+          <div className="text-xl sm:text-2xl font-bold text-green-700">{free.length}</div>
+          <div className="text-[10px] sm:text-xs text-green-600">Elérhető</div>
         </div>
-        <div className="p-3 bg-amber-50 rounded-lg text-center border border-amber-100">
-          <div className="text-2xl font-bold text-amber-700">{busy.length}</div>
-          <div className="text-xs text-amber-600">Foglalt (80–100%)</div>
+        <div className="p-2 sm:p-3 bg-amber-50 rounded-lg text-center border border-amber-100">
+          <div className="text-xl sm:text-2xl font-bold text-amber-700">{busy.length}</div>
+          <div className="text-[10px] sm:text-xs text-amber-600">Foglalt</div>
         </div>
-        <div className="p-3 bg-red-50 rounded-lg text-center border border-red-100">
-          <div className="text-2xl font-bold text-red-700">{over.length}</div>
-          <div className="text-xs text-red-600">Túlterhelt (&gt;100%)</div>
+        <div className="p-2 sm:p-3 bg-red-50 rounded-lg text-center border border-red-100">
+          <div className="text-xl sm:text-2xl font-bold text-red-700">{over.length}</div>
+          <div className="text-[10px] sm:text-xs text-red-600">Túlterhelt</div>
         </div>
       </div>
 
-      <div className="overflow-x-auto">
+      {/* Mobile: card list */}
+      <div className="sm:hidden space-y-2">
+        {capacity.map((c) => (
+          <div
+            key={c.person.id}
+            className="p-3 bg-gray-50 rounded-lg border border-gray-100 cursor-pointer active:bg-gray-100"
+            onClick={() => onPersonClick(c.person.id)}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <Avatar name={c.person.name} size="sm" />
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-gray-900 truncate">{c.person.name}</div>
+                <div className="text-[10px] text-gray-400">{PersonRoleLabels[c.person.role]}</div>
+              </div>
+              <span className={`text-sm font-bold tabular-nums ${c.freeHoursPerWeek > 0 ? "text-green-600" : "text-red-500"}`}>
+                {Math.round(c.freeHoursPerWeek)}h
+              </span>
+            </div>
+            <ProgressBar value={c.utilizationPercent} size="sm" />
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: table */}
+      <div className="hidden sm:block overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-200">

@@ -45,7 +45,7 @@ export function PersonBasicForm({ person }: PersonBasicFormProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
           <label className={labelClass}>Név</label>
           <input className={inputClass} value={form.name} onChange={(e) => handleChange("name", e.target.value)} />
@@ -56,7 +56,7 @@ export function PersonBasicForm({ person }: PersonBasicFormProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
           <label className={labelClass}>Email</label>
           <input type="email" className={inputClass} value={form.email} onChange={(e) => handleChange("email", e.target.value)} />
@@ -67,7 +67,7 @@ export function PersonBasicForm({ person }: PersonBasicFormProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
         <div>
           <label className={labelClass}>Szerepkör</label>
           <select className={inputClass} value={form.role} onChange={(e) => handleChange("role", e.target.value)}>

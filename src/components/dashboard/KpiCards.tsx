@@ -45,16 +45,16 @@ export function KpiCards() {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
       {cards.map((card) => (
-        <div key={card.label} className="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
+        <div key={card.label} className="bg-white rounded-xl border border-gray-200 p-3 sm:p-5 hover:shadow-md transition-shadow">
           <div className="flex items-start justify-between">
-            <div>
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">{card.label}</p>
-              <p className="text-2xl font-bold text-gray-900 mt-1">{card.value}</p>
+            <div className="min-w-0">
+              <p className="text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide truncate">{card.label}</p>
+              <p className="text-lg sm:text-2xl font-bold text-gray-900 mt-0.5 sm:mt-1">{card.value}</p>
             </div>
-            <div className={`${card.bg} p-2.5 rounded-lg`}>
-              <card.icon size={20} className={card.color} />
+            <div className={`${card.bg} p-1.5 sm:p-2.5 rounded-lg shrink-0`}>
+              <card.icon size={16} className={`${card.color} sm:w-5 sm:h-5`} />
             </div>
           </div>
         </div>

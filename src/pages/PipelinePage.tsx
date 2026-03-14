@@ -42,24 +42,24 @@ export function PipelinePage() {
   return (
     <>
       <TopBar title="Pipeline" subtitle={`${projects.length} projekt a rendszerben`} />
-      <div className="flex-1 overflow-y-auto p-6">
+      <div className="flex-1 overflow-y-auto p-4 sm:p-6">
         {/* Toolbar */}
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-3">
-            <div className="relative">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 sm:mb-5">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <div className="relative flex-1 sm:flex-none">
               <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
-                placeholder="Projekt keresése..."
+                placeholder="Keresés..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 pr-4 py-2 text-sm bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8A951]/30 focus:border-[#C8A951] w-64"
+                className="pl-9 pr-4 py-2 text-sm bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8A951]/30 focus:border-[#C8A951] w-full sm:w-52"
               />
             </div>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value as PipelineStatus | "all")}
-              className="px-3 py-2 text-sm bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8A951]/30 focus:border-[#C8A951]"
+              className="px-3 py-2 text-sm bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C8A951]/30 focus:border-[#C8A951] flex-1 sm:flex-none"
             >
               <option value="all">Minden státusz</option>
               {Object.values(PipelineStatus).map((s) => (
@@ -67,7 +67,7 @@ export function PipelinePage() {
               ))}
             </select>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <div className="flex bg-white border border-gray-200 rounded-lg overflow-hidden">
               <button
                 onClick={() => setView("kanban")}
@@ -82,7 +82,10 @@ export function PipelinePage() {
                 <List size={16} />
               </button>
             </div>
-            <Button onClick={handleNewProject}>
+            <Button onClick={handleNewProject} size="sm" className="sm:hidden">
+              <Plus size={14} />
+            </Button>
+            <Button onClick={handleNewProject} className="hidden sm:inline-flex">
               <Plus size={16} /> Új projekt
             </Button>
           </div>

@@ -28,7 +28,7 @@ export function ProjectDrawer({ projectId, open, onClose }: ProjectDrawerProps) 
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
-              className={`px-6 py-3 text-sm font-medium border-b-2 transition-colors cursor-pointer ${
+              className={`px-4 sm:px-6 py-3 text-sm font-medium border-b-2 transition-colors cursor-pointer ${
                 tab === t.key
                   ? "border-[#C8A951] text-[#C8A951]"
                   : "border-transparent text-gray-500 hover:text-gray-700"
@@ -40,7 +40,7 @@ export function ProjectDrawer({ projectId, open, onClose }: ProjectDrawerProps) 
         </div>
       </div>
       {project && (
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {tab === "basic" ? <ProjectBasicForm project={project} /> : <ProjectTeamTab project={project} />}
         </div>
       )}

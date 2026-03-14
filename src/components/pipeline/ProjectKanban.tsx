@@ -51,11 +51,11 @@ export function ProjectKanban({ onProjectClick, searchQuery }: ProjectKanbanProp
   };
 
   return (
-    <div className="flex gap-4 overflow-x-auto pb-4" style={{ minHeight: "calc(100vh - 220px)" }}>
+    <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-4 -mx-4 px-4 sm:mx-0 sm:px-0" style={{ minHeight: "calc(100vh - 280px)" }}>
       {columns.map((col) => (
         <div
           key={col.status}
-          className="flex-shrink-0 w-72 flex flex-col"
+          className="flex-shrink-0 w-64 sm:w-72 flex flex-col"
           onDragOver={(e) => e.preventDefault()}
           onDrop={(e) => handleDrop(e, col.status)}
         >

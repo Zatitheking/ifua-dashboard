@@ -45,7 +45,7 @@ export function ProjectBasicForm({ project }: ProjectBasicFormProps) {
 
   return (
     <div className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
           <label className={labelClass}>Ügyfél</label>
           <input className={inputClass} value={form.company} onChange={(e) => handleChange("company", e.target.value)} />
@@ -56,7 +56,7 @@ export function ProjectBasicForm({ project }: ProjectBasicFormProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
         <div>
           <label className={labelClass}>Iparág</label>
           <select className={inputClass} value={form.industry} onChange={(e) => handleChange("industry", e.target.value)}>
@@ -83,7 +83,7 @@ export function ProjectBasicForm({ project }: ProjectBasicFormProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
         <div>
           <label className={labelClass}>Várható bevétel (Ft)</label>
           <input
@@ -112,7 +112,7 @@ export function ProjectBasicForm({ project }: ProjectBasicFormProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
           <label className={labelClass}>Kezdés</label>
           <input type="date" className={inputClass} value={form.startDate} onChange={(e) => handleChange("startDate", e.target.value)} />

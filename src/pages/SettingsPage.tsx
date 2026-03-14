@@ -41,7 +41,7 @@ export function SettingsPage() {
   return (
     <>
       <TopBar title="Beállítások" subtitle="Rendszer konfiguráció és export" />
-      <div className="flex-1 overflow-y-auto p-6 space-y-6">
+      <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 sm:space-y-6">
         {/* Actions */}
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Műveletek</h3>
@@ -73,7 +73,7 @@ export function SettingsPage() {
         {/* Competency Centers */}
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Kompetenciaközpontok</h3>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {Object.values(CompetencyCenter).map((cc) => (
               <div key={cc} className="p-3 bg-gray-50 rounded-lg text-center">
                 <div className="text-sm font-medium text-gray-700">{CompetencyCenterLabels[cc]}</div>
@@ -88,7 +88,7 @@ export function SettingsPage() {
         {/* Role types */}
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Szerepkörök</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">Személy szerepkörök</h4>
               <div className="space-y-1">
@@ -118,7 +118,7 @@ export function SettingsPage() {
         {/* Stats */}
         <div className="bg-white rounded-xl border border-gray-200 p-5">
           <h3 className="text-sm font-semibold text-gray-900 mb-4">Rendszer statisztika</h3>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {[
               { label: "Projektek", value: projects.length },
               { label: "Személyek", value: persons.length },

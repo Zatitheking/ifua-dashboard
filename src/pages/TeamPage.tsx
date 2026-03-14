@@ -31,7 +31,7 @@ export function TeamPage() {
   return (
     <>
       <TopBar title="Csapat" subtitle={`${persons.filter((p) => p.isActive).length} aktív munkatárs`} />
-      <div className="flex-1 overflow-y-auto p-6">
+      <div className="flex-1 overflow-y-auto p-4 sm:p-6">
         <PeopleDirectory onPersonClick={setSelectedPersonId} onAddPerson={handleAddPerson} />
       </div>
       <PersonDrawer personId={selectedPersonId} open={selectedPersonId !== null} onClose={() => setSelectedPersonId(null)} />

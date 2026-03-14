@@ -191,7 +191,7 @@ export function ProjectTeamTab({ project }: ProjectTeamTabProps) {
       {showAdd && (
         <div className="p-4 bg-amber-50/50 border border-amber-200 rounded-xl space-y-3">
           <h4 className="text-sm font-semibold text-gray-900">Közreműködő hozzáadása</h4>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-1">Személy</label>
               <select className={inputClass} value={newAssignment.personId} onChange={(e) => setNewAssignment({ ...newAssignment, personId: e.target.value })}>

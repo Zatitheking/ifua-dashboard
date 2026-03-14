@@ -41,7 +41,7 @@ export function PersonProjectsTab({ person }: PersonProjectsTabProps) {
                 </div>
                 <StatusBadge color={PipelineStatusColors[project!.status]} label={PipelineStatusLabels[project!.status]} />
               </div>
-              <div className="grid grid-cols-3 gap-4 mt-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mt-3">
                 <div>
                   <div className="text-[10px] text-gray-400 uppercase">Szerep</div>
                   <div className="text-xs font-medium text-gray-700">{AssignmentRoleLabels[assignment.assignmentRole]}</div>

@@ -43,7 +43,7 @@ export function UtilizationHeatmap({ onPersonClick }: UtilizationHeatmapProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-5">
+    <div className="bg-white rounded-xl border border-gray-200 p-3 sm:p-5">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-semibold text-gray-900">Kihasználtság hőtérkép</h3>
         <select
@@ -62,7 +62,7 @@ export function UtilizationHeatmap({ onPersonClick }: UtilizationHeatmapProps) {
         <table className="w-full">
           <thead>
             <tr>
-              <th className="text-left text-xs font-medium text-gray-500 pb-2 pr-4 min-w-[180px]">Személy</th>
+              <th className="text-left text-xs font-medium text-gray-500 pb-2 pr-4 min-w-[140px] sm:min-w-[180px] sticky left-0 bg-white z-10">Személy</th>
               {heatmapData[0]?.months.map((m) => (
                 <th key={m.label} className="text-center text-xs font-medium text-gray-500 pb-2 min-w-[70px]">
                   {m.label}
@@ -73,7 +73,7 @@ export function UtilizationHeatmap({ onPersonClick }: UtilizationHeatmapProps) {
           <tbody>
             {heatmapData.map((row) => (
               <tr key={row.person.id} className="group">
-                <td className="py-1 pr-4">
+                <td className="py-1 pr-4 sticky left-0 bg-white z-10">
                   <div
                     className="flex items-center gap-2 cursor-pointer hover:text-[#C8A951] transition-colors"
                     onClick={() => onPersonClick(row.person.id)}
@@ -111,7 +111,7 @@ export function UtilizationHeatmap({ onPersonClick }: UtilizationHeatmapProps) {
       </div>
 
       {/* Legend */}
-      <div className="flex items-center gap-4 mt-4 pt-3 border-t border-gray-100">
+      <div className="flex items-center gap-2 sm:gap-4 mt-4 pt-3 border-t border-gray-100 flex-wrap">
         <span className="text-[10px] text-gray-400 uppercase tracking-wide">Terhelés:</span>
         {[
           { label: "<60%", color: "#D1FAE5" },
