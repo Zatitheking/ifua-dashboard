@@ -53,14 +53,14 @@ export function CCUtilizationDonut() {
             ))}
           </Pie>
           <Tooltip
-            formatter={(_: unknown, __: unknown, entry: { payload: { name: string; utilization: number; people: number; allocated: number } }) => {
+            formatter={(_: any, __: any, entry: any) => {
               const { name, utilization, people, allocated } = entry.payload;
               return [`${utilization}% (${allocated} h/hét, ${people} fő)`, name];
             }}
             contentStyle={{ borderRadius: 8, fontSize: 13 }}
           />
           <Legend
-            formatter={(value: string, entry: { payload?: { utilization?: number } }) => {
+            formatter={(value: any, entry: any) => {
               const u = entry?.payload?.utilization;
               return `${value} (${u ?? 0}%)`;
             }}

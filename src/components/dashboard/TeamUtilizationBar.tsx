@@ -32,8 +32,8 @@ export function TeamUtilizationBar() {
           <XAxis type="number" domain={[0, 150]} tick={{ fontSize: 11 }} tickFormatter={(v) => `${v}%`} />
           <YAxis type="category" dataKey="name" width={100} tick={{ fontSize: 11 }} />
           <Tooltip
-            formatter={(value: number) => [`${value}%`, "Kihasználtság"]}
-            labelFormatter={(_, payload) => payload?.[0]?.payload?.fullName ?? ""}
+            formatter={(value: any) => [`${value}%`, "Kihasználtság"]}
+            labelFormatter={(_: any, payload: any) => payload?.[0]?.payload?.fullName ?? ""}
             contentStyle={{ borderRadius: 8, fontSize: 13 }}
           />
           <ReferenceLine x={100} stroke="#EF4444" strokeDasharray="3 3" label={{ value: "100%", fontSize: 10, fill: "#EF4444" }} />

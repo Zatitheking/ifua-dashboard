@@ -91,7 +91,7 @@ export function PersonStatsTab({ person }: PersonStatsTabProps) {
             <XAxis dataKey="label" tick={{ fontSize: 11 }} />
             <YAxis tick={{ fontSize: 11 }} tickFormatter={(v) => `${v}h`} />
             <Tooltip
-              formatter={(value: number, name: string) => [
+              formatter={(value: any, name: any) => [
                 `${value}h/hét`,
                 name === "allocated" ? "Allokált" : "Elérhető",
               ]}

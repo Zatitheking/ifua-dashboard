@@ -25,7 +25,7 @@ export function PipelineFunnel() {
           <XAxis type="number" tickFormatter={(v) => formatCurrency(v)} tick={{ fontSize: 11 }} />
           <YAxis type="category" dataKey="label" width={110} tick={{ fontSize: 12 }} />
           <Tooltip
-            formatter={(value: number) => [formatCurrency(value), "Súlyozott érték"]}
+            formatter={(value: any) => [formatCurrency(value as number), "Súlyozott érték"]}
             labelFormatter={(label) => `${label}`}
             contentStyle={{ borderRadius: 8, fontSize: 13 }}
           />

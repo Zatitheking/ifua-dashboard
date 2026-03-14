@@ -52,8 +52,8 @@ export function RevenueForecast() {
           <XAxis dataKey="label" tick={{ fontSize: 11 }} />
           <YAxis tickFormatter={(v) => formatCurrency(v)} tick={{ fontSize: 11 }} />
           <Tooltip
-            formatter={(value: number, name: string) => [
-              formatCurrency(value),
+            formatter={(value: any, name: any) => [
+              formatCurrency(value as number),
               name === "won" ? "Megnyert/Futó" : "Pipeline",
             ]}
             contentStyle={{ borderRadius: 8, fontSize: 13 }}
